@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://taneros.github.io/starting-react",
   "dependencies": {
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.2.8",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
