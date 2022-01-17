@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import useStore from "../store";
+import store from "../store";
+import { observer } from "mobx-react";
 
 const Input = styled.input`
   width: 100%;
@@ -8,17 +9,12 @@ const Input = styled.input`
   padding: 0.2rem;
 `;
 
-const PokemonFilter = () => {
-  const setFilter = useStore((state) => state.setFilter);
-  const filter = useStore((state) => state.filter);
+const PokemonFilter = () => (
+  <Input
+    type="text"
+    value={store.filter}
+    onChange={(e) => store.setFilter(e.target.value)}
+  />
+);
 
-  return (
-    <Input
-      type="text"
-      value={filter}
-      onChange={(e) => setFilter(e.target.value)}
-    />
-  );
-};
-
-export default PokemonFilter;
+export default observer(PokemonFilter);
